@@ -1,0 +1,9 @@
+#postgres
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+
+#java-installer
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+#WARNING I might still do do an automatic licence agreement thing
+
+curl -L https://debian.datastax.com/debian/repo_key | apt-key add -
+

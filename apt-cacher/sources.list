@@ -1,0 +1,6 @@
+deb http://apt-mirror/debian jessie main
+deb http://apt-mirror/debian jessie-updates main
+deb http://apt-mirror jessie/updates main
+deb http://apt-mirror/pub/repos/apt wheezy-pgdg main
+deb http://apt-mirror/webupd8team/java/ubuntu trusty main
+deb-src http://apt-mirror/webupd8team/java/ubuntu trusty main

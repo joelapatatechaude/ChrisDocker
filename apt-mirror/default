@@ -1,0 +1,29 @@
+
+server {
+    gzip on;
+
+    location /debian {
+        root /var/spool/apt-mirror/mirror/debian.mirror.digitalpacific.com.au;
+	autoindex on;
+    }
+
+    location / {
+        root /var/spool/apt-mirror/mirror/security.debian.org;
+        autoindex on;
+    }
+
+    location /pub/repos/apt {
+        root /var/spool/apt-mirror/mirror/apt.postgresql.org;
+	autoindex on;
+    }
+
+    location /webupd8team/java/ubuntu {
+        root /var/spool/apt-mirror/mirror/ppa.launchpad.net;
+	autoindex on;
+    }
+
+    location /community {
+        root /var/spool/apt-mirror/mirror/debian.datastax.com;
+	autoindex on;
+    }
+}

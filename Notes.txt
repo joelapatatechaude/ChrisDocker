@@ -1,0 +1,26 @@
+apt-cacher:
+Seems to work with systemctl start / stop
+Web interface seems OK.
+In principle, the ip address of the container can be used with APT_CACHER for ingo and other stuff.
+
+
+apt-mirror:
+Work with systemctl start
+Does not work with systemctl stop
+Log in inside to either:
+- run apt-mirror script
+- start the nginx service (service nginx start)
+Still need to make it work with all the repo we are using...
+
+apt-base:
+Nothing to declare
+
+apt-test:
+Use to quickly test apt-update etc... to see if it responds
+
+
+TODO:
+1. Get apt-mirror to mirror all the sites we want correctly
+2. Get apt-cacher to link on apt-mirror and use it as source
+3. Find the conveniant way to run apt-mirror (maybe apt-mirror-update and apt-mirror-serve
+
