@@ -1,0 +1,28 @@
+[Unit]
+Description=Dockerized apt-cacher
+After=docker.service
+Requires=docker.service
+
+#After=apt-mirror.service
+#Requires=apt-mirror.service
+
+#After=registry.service
+#Requires=registry.service
+
+
+[Service]
+User=chris
+#Restart=on-failure
+ExecStartPre=-/usr/bin/docker rm -f apt-cacher
+ExecStart=/usr/bin/docker run \
+			  --rm \
+			  -p 8000:8000 \
+			  --name apt-cacher \
+			  -v /scratch/apt-cacher/cache/squid-deb-proxy:/var/cache/squid-deb-proxy \
+			  -v /scratch/apt-cacher/log/squid-deb-proxy:/var/log/squid-deb-proxy \
+			  apt-cacher
+
+#ExecStop=/usr/bin/docker kill apt-cacher
+
+[Install]
+#WantedBy=multi-user.target

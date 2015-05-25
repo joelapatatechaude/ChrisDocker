@@ -1,0 +1,20 @@
+[Unit]
+Description=Apt Mirror for Docker
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=chris
+#Restart=on-failure
+ExecStartPre=-/usr/bin/docker rm -f apt-mirror
+ExecStart=/usr/bin/docker run \
+			  -dt \
+			  -p 80:80 \
+    			  --name apt-mirror \
+       			  -v /scratch/apt-mirror/mirror:/var/spool/apt-mirror/mirror \
+       			  -v /scratch/apt-mirror/skel:/var/spool/apt-mirror/skel \
+       			  -v /scratch/apt-mirror/var:/var/spool/apt-mirror/var \
+       			  apt-mirror
+
+[Install]
+#WantedBy=multi-user.target

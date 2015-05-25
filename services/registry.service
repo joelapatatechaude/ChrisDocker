@@ -1,0 +1,19 @@
+[Unit]
+Description=Local Registry for Docker
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=chris
+#Restart=on-failure
+ExecStartPre=-/usr/bin/docker rm -f registry
+ExecStart=/usr/bin/docker run \
+			  --rm \
+			  --name registry \
+			  -p 5000:5000 \
+			  -v /scratch/docker-images:/images \
+			  -e STORAGE_PATH=/images \
+			  registry
+
+[Install]
+#WantedBy=multi-user.target
