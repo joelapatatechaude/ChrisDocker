@@ -20,7 +20,8 @@ deb-amd64 http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main
 deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb http://debian.datastax.com/community stable main
-#deb-amd64 http://www.rabbitmq.com/debian/ testing main
+deb http://nginx.org/packages/mainline/debian/ wheezy nginx
+deb http://www.rabbitmq.com/debian/ testing main
 
 #deb http://debian.datastax.com/community stable main
 #deb-amd64 http://www.rabbitmq.com/debian/ testing main
