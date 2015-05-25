@@ -26,4 +26,19 @@ server {
         root /var/spool/apt-mirror/mirror/debian.datastax.com;
 	autoindex on;
     }
+
+    location /packages/mainline/debian/ {
+        root /var/spool/apt-mirror/mirror/nginx.org;
+	autoindex on;
+    }
+}
+
+server {
+    gzip on;
+    listen 80;
+    server_name *.rabbitmq.com;
+    location /debian {
+    root /var/spool/apt-mirror/mirror/www.rabbitmq.com;
+    	autoindex on;
+    }
 }
