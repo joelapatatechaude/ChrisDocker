@@ -22,14 +22,8 @@ deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
 deb http://debian.datastax.com/community stable main
 deb http://nginx.org/packages/mainline/debian/ wheezy nginx
 deb http://www.rabbitmq.com/debian/ testing main
-
-#deb http://debian.datastax.com/community stable main
-#deb-amd64 http://www.rabbitmq.com/debian/ testing main
-#deb http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
-#deb http://dl.bintray.com/apache/cassandra 20x main
-#deb http://Instaclustr:xQL22lxIeQfyCA6@debian.datastax.com/enterprise stable main
-#deb http://nginx.org/packages/mainline/debian/ wheezy nginx
-#deb-src http://dl.bintray.com/apache/cassandra 20x main
-#deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main
+deb http://dl.bintray.com/apache/cassandra 20x main
+deb-src http://dl.bintray.com/apache/cassandra 20x main
+deb http://Instaclustr:xQL22lxIeQfyCA6@debian.datastax.com/enterprise stable main
 
 clean http://ftp.us.debian.org/debian

@@ -8,6 +8,6 @@ RUN FILE=/etc/squid-deb-proxy/squid-deb-proxy.conf; sed -r '/http_access deny !t
 
 COPY squid-wrap.sh /usr/local/bin/
 
-COPY sources.list /etc/apt/sources.list
+#COPY squid-deb-proxy.conf /etc/squid-deb-proxy/
 
 CMD ["/usr/local/bin/squid-wrap.sh"]
