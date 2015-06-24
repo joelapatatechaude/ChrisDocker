@@ -1,3 +1,7 @@
+.PHONY: jenkins
+jenkins:
+	cd jenkins && docker build -t jenkins-chris .
+
 .PHONY: apt-base
 apt-base:
 	cd apt-base && docker build -t apt-base .

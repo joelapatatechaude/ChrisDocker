@@ -1,0 +1,14 @@
+FROM jenkins:latest
+
+USER root
+ENV TERM xterm
+COPY dagi /usr/local/bin/
+RUN dagi emacs sudo rubygems python-pip python-dev postgresql-client
+RUN gem install sass
+RUN pip install nose bernhard ecdsa pycrypto
+RUN wget -qO- https://get.docker.com/ | sh
+RUN sudo usermod -aG docker jenkins
+RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+RUN wget https://aphyr.com/riemann/riemann_0.2.8_all.deb
+RUN dpkg -i /tmp/riemann_0.2.8_all.deb
+USER jenkins
