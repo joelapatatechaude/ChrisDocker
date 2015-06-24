@@ -1,0 +1,18 @@
+[Unit]
+Description=Jenkins
+After=docker.service
+Requires=docker.service
+
+[Service]
+User=chris
+#Restart=on-failure
+ExecStartPre=-/usr/bin/docker rm -f jenkins-chris
+ExecStart=/usr/bin/docker run \
+			  --rm \
+			  --name jenkins-chris \
+			  -p 8080:8080 \
+			  -v /scratch/jenkins:/var/jenkins_home \
+			  jenkins-chris
+
+[Install]
+#WantedBy=multi-user.target
