@@ -3,7 +3,7 @@ server {
     gzip on;
 
     location /debian {
-        root /var/spool/apt-mirror/mirror/debian.mirror.digitalpacific.com.au;
+        root /var/spool/apt-mirror/mirror/httpredir.debian.org;
 	autoindex on;
     }
 

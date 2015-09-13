@@ -22,6 +22,10 @@ apt-test: apt-base
 apt-nontest: apt-base
 	cd apt-nontest && docker build -t apt-nontest .
 
+.PHONY: aptly
+aptly: aptly
+	cd aptly && docker build -t aptly .
+
 .PHONY: all
 all: apt-base apt-cacher apt-mirror apt-test
 
